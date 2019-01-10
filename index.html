@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>React Electron</title>
+    <link type="text/css" rel="stylesheet" href="../../css/index.css">
+  </head>
+    <main id="root"></main>
+    <script src='./app.bundle.js'></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+        const { ipcRenderer } = require('electron')
+        ipcRenderer.send('windowDoneLoading', {}) // let backend know react is done rendering.
+        })
+    </script>
+  </body>
+</html>
